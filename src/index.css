@@ -1,0 +1,241 @@
+/* DO NOT CHANGE */
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+/* DO NOT CHANGE */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* CHANGE VALUES FOR THEME — Fermor: colorful, premium fintech.
+ * Palette: warm off-white bg, charcoal text, forest green primary,
+ * with a playful supporting cast (mint, amber, sky, coral, plum). */
+:root {
+  --radius: 0.875rem;
+  --background: #f8f9f6;
+  --foreground: #17231e;
+  --card: #ffffff;
+  --card-foreground: #17231e;
+  --popover: #ffffff;
+  --popover-foreground: #17231e;
+  --primary: #176b4d;
+  --primary-foreground: #f6fbf8;
+  --secondary: #ddeee5;
+  --secondary-foreground: #14523b;
+  --muted: #f0f1ec;
+  --muted-foreground: #5c6b62;
+  --accent: #ddeee5;
+  --accent-foreground: #14523b;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #e4e7e0;
+  --input: #e4e7e0;
+  --ring: #176b4d;
+  --chart-1: #eab308;
+  --chart-2: #0ea5e9;
+  --chart-3: #f87171;
+  --chart-4: #176b4d;
+  --chart-5: #a855f7;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: #17231e;
+  --sidebar-primary: #176b4d;
+  --sidebar-primary-foreground: #f6fbf8;
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: #14523b;
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: #176b4d;
+
+  /* Fermor brand colors — a confident, colorful set used across the page */
+  --fm-green: #176b4d;
+  --fm-green-deep: #0f533c;
+  --fm-mint: #ddeee5;
+  --fm-amber: #f2a93b;
+  --fm-amber-soft: #fdf1dd;
+  --fm-sky: #2f9ec4;
+  --fm-sky-soft: #e3f2f7;
+  --fm-coral: #e2694f;
+  --fm-coral-soft: #fbe6e0;
+  --fm-plum: #7c5cbf;
+  --fm-plum-soft: #efe9f9;
+  --fm-char: #17231e;
+  --fm-ink-soft: #54625a;
+  --fm-line: #e4e7e0;
+}
+
+/* Typography: Manrope from Fontshare (free, no signup). */
+@import url("https://api.fontshare.com/v2/css?f[]=manrope@400,500,600,700,800&display=swap");
+
+/* Fermor theme utilities for the colorful brand system */
+@theme inline {
+  --color-fm-green: var(--fm-green);
+  --color-fm-green-deep: var(--fm-green-deep);
+  --color-fm-mint: var(--fm-mint);
+  --color-fm-amber: var(--fm-amber);
+  --color-fm-amber-soft: var(--fm-amber-soft);
+  --color-fm-sky: var(--fm-sky);
+  --color-fm-sky-soft: var(--fm-sky-soft);
+  --color-fm-coral: var(--fm-coral);
+  --color-fm-coral-soft: var(--fm-coral-soft);
+  --color-fm-plum: var(--fm-plum);
+  --color-fm-plum-soft: var(--fm-plum-soft);
+  --color-fm-char: var(--fm-char);
+  --color-fm-ink-soft: var(--fm-ink-soft);
+  --color-fm-line: var(--fm-line);
+}
+
+/* Smooth section scrolling + scroll-padding so sticky navbar doesn't cover headings */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: Manrope, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.011em;
+  text-rendering: optimizeLegibility;
+}
+
+/* Amber highlight sweep used by section headings */
+.hl-sweep {
+  position: relative;
+  z-index: 0;
+}
+.hl-sweep::before {
+  content: "";
+  position: absolute;
+  inset: 0.08em -0.18em 0.02em -0.18em;
+  background: linear-gradient(
+    104deg,
+    color-mix(in srgb, var(--fm-amber) 18%, transparent),
+    color-mix(in srgb, var(--fm-amber) 38%, transparent)
+  );
+  border-radius: 0.3em;
+  z-index: -1;
+  transform: skew(-2deg);
+}
+
+/* Muted mint band used by the How-it-works + FAQ sections */
+.band-mint {
+  background:
+    radial-gradient(
+      42rem 22rem at 88% 0%,
+      color-mix(in srgb, var(--fm-sky) 7%, transparent),
+      transparent
+    ),
+    linear-gradient(180deg, #eaf3ee 0%, #f6f7f3 100%);
+}
+
+/* Focus visibility for interactive elements */
+:focus-visible {
+  outline: 2px solid var(--fm-green);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Accessible focus ring for in-view animated cards */
+.educator:focus-visible {
+  outline: 2px solid var(--fm-green);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hl-sweep::before,
+  .band-mint {
+    transition: none;
+  }
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not([disabled]),
+  [role="button"]:not([disabled]) {
+    cursor: pointer;
+  }
+}
