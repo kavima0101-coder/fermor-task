@@ -1,6 +1,5 @@
-import { Link } from "react-router";
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { GetStartedButton } from "./GetStartedModal";
 import { DashboardPreview } from "./DashboardPreview";
 
 export function Hero() {
@@ -49,12 +48,7 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button asChild size="lg" className="rounded-full bg-fm-green px-7 text-base hover:bg-fm-green-deep">
-              <Link to="/auth">
-                Get Started
-                <ArrowRight className="ml-1 size-4" />
-              </Link>
-            </Button>
+            <GetStartedButton size="lg" className="bg-fm-green px-7 text-base hover:bg-fm-green-deep" />
             <Button
               asChild
               size="lg"

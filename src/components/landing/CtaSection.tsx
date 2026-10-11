@@ -1,6 +1,4 @@
-import { Link } from "react-router";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { GetStartedButton } from "./GetStartedModal";
 
 /** Closing call to action — visually strong, mirrors the hero language. */
 export function CtaSection() {
@@ -24,16 +22,10 @@ export function CtaSection() {
             Start with a clearer understanding of your money.
           </p>
           <div className="mt-9">
-            <Button
-              asChild
+            <GetStartedButton
               size="lg"
-              className="rounded-full bg-fm-mint px-8 text-base font-bold text-fm-char hover:bg-white"
-            >
-              <Link to="/auth">
-                Get Started
-                <ArrowRight className="ml-1 size-4" />
-              </Link>
-            </Button>
+              className="bg-fm-mint px-8 text-base font-bold text-fm-char hover:bg-white [&_svg:last-child]:text-fm-char"
+            />
           </div>
           <p className="mt-6 text-xs text-white/50">
             Dashboards on this page show illustrative sample data.

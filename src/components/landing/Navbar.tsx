@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { GetStartedButton } from "./GetStartedModal";
 
 const NAV_LINKS = [
   { label: "Product", href: "#preview" },
@@ -61,9 +60,7 @@ export function Navbar() {
         </ul>
 
         <div className="hidden md:block">
-          <Button asChild className="rounded-full">
-            <Link to="/auth">Get Started</Link>
-          </Button>
+          <GetStartedButton />
         </div>
 
         {/* Mobile hamburger */}
@@ -95,11 +92,7 @@ export function Navbar() {
               </li>
             ))}
             <li className="pt-2">
-              <Button asChild className="w-full rounded-full">
-                <Link to="/auth" onClick={stopAndClose}>
-                  Get Started
-                </Link>
-              </Button>
+              <GetStartedButton className="w-full" />
             </li>
           </ul>
         </div>
