@@ -193,7 +193,7 @@ export function ProductPreview() {
           <ul className="space-y-3">
             {CHECK_ITEMS.map((item) => (
               <li key={item} className="flex items-start gap-2.5 text-sm text-fm-char/90">
-                <span className="mt-0.5 flex size-4.5 h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full bg-fm-green text-[0.6rem] font-extrabold text-white">
+                <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-fm-green text-[0.6rem] font-extrabold text-white">
                   ✓
                 </span>
                 {item}

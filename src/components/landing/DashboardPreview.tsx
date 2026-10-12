@@ -295,7 +295,7 @@ export function DashboardPreview() {
                 aria-valuenow={goalPct}
                 aria-valuemin={0}
                 aria-valuemax={100}
-                aria-label="Emergency fund: 58% saved (sample)"
+                aria-label={`Emergency fund: ${goalPct}% saved (sample)`}
                 className="mt-2.5 h-2 w-full overflow-hidden rounded-full bg-fm-mint"
               >
                 <div

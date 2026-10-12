@@ -34,7 +34,7 @@ function StackedCategoryBar({
       </div>
       {/* legend below keeps the chart readable on all widths */}
       <div className="mt-4 grid gap-2 sm:grid-cols-2">
-        {data.map((c, i) => (
+        {data.map((c) => (
           <div
             key={c.name}
             className="flex items-center gap-2 text-xs font-bold"
@@ -50,7 +50,6 @@ function StackedCategoryBar({
                 ({Math.round((c.amount / total) * 100)}%)
               </span>
             </span>
-            <span className="sr-only">{`row ${i + 1}`}</span>
           </div>
         ))}
       </div>
