@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predev": "convex codegen || echo 'Convex codegen skipped (no deployment credentials); using committed src/convex/_generated files.'",
+    "prebuild": "convex codegen || echo 'Convex codegen skipped (no deployment credentials); using committed src/convex/_generated files.'",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "format": "prettier --write .",
